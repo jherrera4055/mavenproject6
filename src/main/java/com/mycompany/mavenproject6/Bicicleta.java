@@ -1,13 +1,18 @@
 public class Bicicleta implements ImpactoEcologico {
     private boolean esElectrica;
-    private double emisionesFabricacion; // Emisiones durante la fabricación
-    private double consumoEnergetico; // Consumo energético si es eléctrica
+    private double emisionesFabricacion;
+    private double consumoEnergetico;
 
-    // Constructor y métodos getters y setters
+    public Bicicleta(boolean esElectrica, double emisionesFabricacion, double consumoEnergetico) {
+        this.esElectrica = esElectrica;
+        this.emisionesFabricacion = emisionesFabricacion;
+        this.consumoEnergetico = consumoEnergetico;
+    }
 
     @Override
     public double obtenerImpactoEcologico() {
         double factorEmision = esElectrica ? consumoEnergetico : 0;
         return emisionesFabricacion + factorEmision;
     }
+
 }
